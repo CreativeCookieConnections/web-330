@@ -26,12 +26,12 @@ document.getElementById("generateHero").addEventListener("click", function(e) {
   e.preventDefault();
 
   // Get form values
-  const name = (document.getElementById("heroName") || { value: "" }).value.trim();
-  const gender = (document.getElementById("heroGender") || { value: "" }).value.trim();
-  const characterClass = (document.getElementById("heroClass") || { value: "" }).value.trim();
+  let name = (document.getElementById("heroName") || { value: "" }).value.trim();
+  let gender = (document.getElementById("heroGender") || { value: "" }).value.trim();
+  let characterClass = (document.getElementById("heroClass") || { value: "" }).value.trim();
 
   // Create character
-  const hero = createCharacter(name || "Unnamed Hero", gender || "Unknown", characterClass || "None");
+  let hero = createCharacter(name || "Unnamed Hero", gender || "Unknown", characterClass || "None");
 
   // Display character information
   let output = document.getElementById("characterOutput");
@@ -40,7 +40,7 @@ document.getElementById("generateHero").addEventListener("click", function(e) {
     output.id = "characterOutput";
     output.className = "character-output";
     // Insert after the form/button
-    const container = document.getElementById("mainContainer") || document.body;
+    let container = document.getElementById("mainContainer") || document.body;
     container.appendChild(output);
   }
 
