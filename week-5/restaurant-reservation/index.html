@@ -6,24 +6,29 @@
       Chapter 2
       Programming Assignment
 
-      Author:
-      Date:
-      Filename:
+      Author: Aisha Keller
+      Date: 11/21/2025
+      Filename: index.html
     -->
     <title>Table Reservation</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <header>
+      <img src="le var.png" alt="Restaurant logo that has a dinosaur wearing a bow tie with the business title Le Var Restaurants." class="logo-image" />
+      <h1>Table Reservation</h1>
+    </header>
     <div class="form-container">
       <form id="reservationForm">
         <label for="name">Name:</label><br />
         <input type="text" id="name" name="name" /><br />
         <label for="tableNumber">Table Number:</label><br />
         <input type="number" id="tableNumber" name="tableNumber" /><br />
-        <input type="submit" value="Reserve" />
+        <input type="submit" id="reserveButton" value="Reserve" />
       </form>
       <p id="message"></p>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
