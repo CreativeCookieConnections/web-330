@@ -3,9 +3,332 @@
   Chapter 3
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Aisha Keller
+  Date: 12/06/2025
+  Filename: styles.css
 */
 
 /* Add your CSS styles here */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Eagle Lake', cursive, 'Almendra', serif, Arial, sans-serif;
+  background-image: url('background.png');
+  background-color: rgb(255, 123, 0);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #333;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(218, 127, 24, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(206, 83, 34, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header image styling */
+.header-image {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 1s ease-out;
+  border: 4px solid #d4a574;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main title */
+.main-title {
+  position: relative;
+  text-align: center;
+  font-size: 52px;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow:
+    4px 4px 12px rgba(0, 0, 0, 1),
+    -2px -2px 0 #2c1810,
+    2px -2px 0 #2c1810,
+    -2px 2px 0 #2c1810,
+    2px 2px 0 #2c1810,
+    0 0 25px #ffd700,
+    0 0 50px #ffa500,
+    0 0 75px #ff8800;
+  margin-bottom: 40px;
+  padding: 20px;
+  z-index: 1;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  font-family: 'Eagle Lake', cursive;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow:
+      4px 4px 12px rgba(0, 0, 0, 1),
+      -2px -2px 0 #2c1810,
+      2px -2px 0 #2c1810,
+      -2px 2px 0 #2c1810,
+      2px 2px 0 #2c1810,
+      0 0 25px #ffd700,
+      0 0 50px #ffa500;
+  }
+  to {
+    text-shadow:
+      4px 4px 12px rgba(0, 0, 0, 1),
+      -2px -2px 0 #2c1810,
+      2px -2px 0 #2c1810,
+      -2px 2px 0 #2c1810,
+      2px 2px 0 #2c1810,
+      0 0 35px #ffd700,
+      0 0 70px #ffa500,
+      0 0 100px #ff8800;
+  }
+}
+
+/* Error container at the top */
+#error {
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+/* Chef container grid layout */
+.chef-container {
+  margin: 20px auto;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.chef-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading card styling */
+.loading-card {
+  background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+  padding: 40px;
+  text-align: center;
+  border: 3px solid #d4a574;
+}
+
+.spinner {
+  border: 4px solid rgba(212, 165, 116, 0.2);
+  border-left-color: #ffd700;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-card p {
+  color: #f5deb3;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Eagle Lake', cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Chef card styling */
+.chef-card {
+  background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #d4a574;
+}
+
+.chef-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Chef image styling */
+.chef-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+  border: 4px solid #d4a574;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chef-card:hover .chef-image {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.chef-card h2 {
+  color: #ffd700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #d4a574;
+  padding-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Eagle Lake', cursive;
+}
+
+.chef-details {
+  margin-top: 15px;
+}
+
+.chef-details p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #f5deb3;
+  padding: 8px;
+  background: rgba(212, 165, 116, 0.15);
+  border-radius: 6px;
+  border-left: 4px solid #d4a574;
+}
+
+.chef-details strong {
+  color: #ffd700;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Error card styling */
+.error-card {
+  background: linear-gradient(135deg, #3d3434 0%, #000000 100%);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 20px rgba(173, 164, 164, 0.4);
+  padding: 30px;
+  text-align: center;
+  border: 2px solid #8f7c7c;
+}
+
+/* Error image styling */
+.error-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+  border: 4px solid #8f7c7c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.error-card:hover .error-image {
+  transform: scale(1.05);
+}
+
+.error-card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(80, 79, 79, 0.692);
+}
+
+.error-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  body {
+    padding: 60px 40px;
+  }
+
+  .chef-container {
+    max-width: 700px;
+  }
+
+  .chef-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .header-image {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chef-container {
+    max-width: 800px;
+  }
+
+  .chef-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .header-image {
+    max-width: 500px;
+  }
+}
+
+/* Magical particle effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
