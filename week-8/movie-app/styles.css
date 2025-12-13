@@ -3,9 +3,129 @@
   Chapter 4
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Aisha Keller
+  Date: 12/12/2025
+  Filename: styles.css
 */
 
-/* Add your styles here */
+/* Style rules for main content*/
+
+body {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Chewy', cursive;
+  font-size: 2rem;
+  color: #4b0082;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #9370db;
+}
+
+.header-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+body {
+  background-color: #e0a2c1;
+}
+
+.main-title {
+  font-family: 'Chicle', cursive;
+  font-size: 5rem;
+  color: #aad4e6;
+  text-shadow: 2px 2px 4px #0197bd;
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+}
+
+.form-container {
+  margin: auto;
+  width: 50%;
+  padding: 1%;
+  margin-top: 1rem;
+  font-family: 'Chicle', cursive;
+  font-size: 2rem;
+  color: #e79ce7;
+  text-shadow: 2px 2px 4px #ff1493;
+  background-color: #eb9ecb;
+  border: 0.5px solid #f8cce7;
+  border-radius: 15px;
+  box-shadow: 4px 4px 6px #d46389;
+}
+
+#title-input {
+  font-family: 'Chicle', cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  width: 80%;
+  max-width: 500px;
+  border: 0.5px solid #eec5d9;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #e65183;
+  color: #9f73be;
+}
+
+#title-input:focus {
+  border-color: #dfaddc;
+  box-shadow: 0 0 5px #ff0af3;
+  outline: none;
+}
+
+#submit {
+  font-family: 'Chicle', cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: 0.5px solid #ebd1dd;
+  border-radius: 10px;
+  background-color: #f8c2e1;
+  color: #aad4e6;
+  text-shadow: 1px 1px 3px #00658d;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px #ca3d6c;
+}
+
+#submit:hover {
+  background-color: #ff69b4;
+  color: #fff0f5;
+}
+
+#movie-info {
+  margin-top: 2rem;
+  font-family: 'Chicle', cursive;
+  font-size: 1.8rem;
+  color: #c87df3;
+  text-shadow: 1px 1px 3px #63047a;
+}
+
+#movie-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #aad4e6;
+  text-shadow: 1px 1px 3px #0888af;
+}
+
+#movie-description {
+  font-size: 1.5rem;
+  margin: 1rem 2rem;
+  line-height: 1.4;
+}
+
+#movie-release-date {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+#movie-director {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #f0df81;
+  text-shadow: 1px 1px 3px #6b5715;
+}
+
+
